@@ -11,21 +11,12 @@ class Header extends Component {
   <Link to="/">Home</Link>
   </a>
   <a class="item">
-  <Link to="/Races">Forklaring</Link>
+  <Link to="/Forklaring">Forklaring</Link>
   </a>
   <a class="item">
-  <Link to="/Standings">Om L-Star</Link>
+  <Link to="/Om">Om L-Star</Link>
   </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search..."/>
-        <i class="search link icon"></i>
-      </div>
-    </div>
-    <a class="ui item">
-      Logout
-    </a>
+  <div class="right menu"> 
   </div>
 </div>
 <Route exact path="/" component={Beregner} />
