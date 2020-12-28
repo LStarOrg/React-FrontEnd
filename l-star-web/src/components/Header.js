@@ -12,10 +12,10 @@ class Header extends Component {
       <div className="ui container">
         <div class="ui inverted borderless main menu fixed">
           <div className="header item">
-          <img className="ui avatar image" src={LStarLogo} ></img>
-          L-Star Web Project
+            <img className="ui avatar image" src={LStarLogo}></img>
+            L-Star Web Project
           </div>
-          
+
           <a class="item">
             <Link to="/">Startside</Link>
           </a>
@@ -28,11 +28,10 @@ class Header extends Component {
           <div class="right menu"></div>
         </div>
         <div className="ui raised segment" style={{ marginTop: 50 }}>
-        <Route exact path="/" component={Beregner} />
-        <Route path="/Forklaring" component={Forklaring} />
-        <Route path="/Om" component={Om} />
-        </div>
-        
+          <Route exact path="/" component={Beregner} />
+          <Route path="/Forklaring" component={Forklaring} />
+          <Route path="/Om" component={Om} />
+        </div>        
       </div>
     );
   }
