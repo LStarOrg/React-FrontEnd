@@ -19,12 +19,12 @@ function OpslagsAPI() {
     const KartoflerOgPastaKogt8 = firebase.database().ref('Kartofler og pasta (kogt)/8');
 
     //Smør, mayonnaise, flødeost mm. 3
-    const SmørMayonnaiseFlødeostmm3 = firebase.database().ref('Smør, mayonnaise, flødeost mm./3');
-    const SmørMayonnaiseFlødeostmm4 = firebase.database().ref('Smør, mayonnaise, flødeost mm./4');
-    const SmørMayonnaiseFlødeostmm5 = firebase.database().ref('Smør, mayonnaise, flødeost mm./5');
-    const SmørMayonnaiseFlødeostmm6 = firebase.database().ref('Smør, mayonnaise, flødeost mm./6');
-    const SmørMayonnaiseFlødeostmm7 = firebase.database().ref('Smør, mayonnaise, flødeost mm./7');
-    const SmørMayonnaiseFlødeostmm8 = firebase.database().ref('Smør, mayonnaise, flødeost mm./8');
+    const SmørMayonnaiseFlødeostmm3 = firebase.database().ref('Smør, mayonnaise, flødeost/3');
+    const SmørMayonnaiseFlødeostmm4 = firebase.database().ref('Smør, mayonnaise, flødeost/4');
+    const SmørMayonnaiseFlødeostmm5 = firebase.database().ref('Smør, mayonnaise, flødeost/5');
+    const SmørMayonnaiseFlødeostmm6 = firebase.database().ref('Smør, mayonnaise, flødeost/6');
+    const SmørMayonnaiseFlødeostmm7 = firebase.database().ref('Smør, mayonnaise, flødeost/7');
+    const SmørMayonnaiseFlødeostmm8 = firebase.database().ref('Smør, mayonnaise, flødeost/8');
 
     //Grønne salater, spinat og krydderurter 4
     const GrønneSalaterSpinatOgKrydderurter3 = firebase.database().ref('GrønneSalaterSpinatOgKrydderurter/3');
