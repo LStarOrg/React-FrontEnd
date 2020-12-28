@@ -5,10 +5,15 @@ import Beregner from "./Beregner";
 class Header extends Component {
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "10px" }}>
-        <div class="ui inverted menu">
-          <a class="active item">
-            <Link to="/">Home</Link>
+      <div className="ui container">
+        <div class="ui inverted borderless main menu fixed">
+          <div className="header item">
+            <img className="ui avatar image" src={LStarLogo}></img>
+            L-Star Web Project
+          </div>
+
+          <a class="item">
+            <Link to="/">Startside</Link>
           </a>
           <a class="item">
             <Link to="/Forklaring">Forklaring</Link>
@@ -18,9 +23,11 @@ class Header extends Component {
           </a>
           <div class="right menu"></div>
         </div>
-        <Route exact path="/" component={Beregner} />
-        {/*<Route path="/Races" component={} />
-          <Route path="/Results" component={} /> */}
+        <div className="ui raised segment" style={{ marginTop: 50 }}>
+          <Route exact path="/" component={Beregner} />
+          <Route path="/Forklaring" component={Forklaring} />
+          <Route path="/Om" component={Om} />
+        </div>
       </div>
     );
   }
