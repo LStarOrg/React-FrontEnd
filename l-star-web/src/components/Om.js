@@ -1,5 +1,4 @@
 import React from "react";
-
 import EmilImg from "../assets/Emil.png"
 import JonImg from "../assets/Jon.jpg"
 
@@ -11,32 +10,34 @@ class Om extends React.Component {
         <div className="ui green segment">
           <h2 className="ui header">Om L-Star Web Project</h2>
           <p>L-star Web Project er udviklet af:</p>
-          <div className="ui two column grid">
+          <div className="ui four column grid">
               <div className="column">
-                  <div className="ui fluid card">
+                  <div className="ui card">
                       <div className="">
-                          <img className="ui centered image" src={EmilImg} size="150"/>
+                          <img className="ui small centered image" src={EmilImg} size="150" alt=""/>
                       </div>
                     <div className="content">
-                        <a className="header">Emil Mosbæk Walsøe Pedersen</a>
+                        <a href="#" className="header">Emil Mosbæk Walsøe Pedersen</a>
                         <p>Datamatiker</p>
+                        <p>Email: emilwalsoepedersen@gmail.com</p>
                     </div>
                   </div>
               </div>
               <div className="column">
-                  <div className="ui fluid card">
+                  <div className="ui card">
                   <div className="">
-                          <img className="ui centered image" src={JonImg}/>
+                          <img className="ui small centered image" src={JonImg} alt=""/>
                       </div>
                     <div className="content">
-                        <a className="header">Jon Paw Lam</a>
-                        <p>Penis Connaisseur</p>
+                        <a href="#" className="header">Jon Paw Lam</a>
+                        <p>Datamatiker</p>
+                        <p>Email: </p>
                     </div>
                   </div>
               </div>
           </div>
           <p>
-            Dette projekt er udviklet vores afsluttede hovedopgave på
+            Dette projekt er udviklet til vores afsluttede hovedopgave på
             datamatiker studiet.
           </p>
         </div>
