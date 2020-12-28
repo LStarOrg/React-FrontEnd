@@ -2,7 +2,12 @@ import React from "react";
 
 class Beregner extends React.Component {
   render() {
-    return <div classname="ui container">hey</div>;
+    return <div className="ui container">
+        <div>
+
+        </div>
+
+    </div>;
   }
 }
 

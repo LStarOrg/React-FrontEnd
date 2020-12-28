@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import Beregner from "./Beregner";
+import Forklaring from "./Forklaring";
+import Om from "./Om";
+
+import LStarLogo from "../assets/favicon-32x32.png"
 
 class Header extends Component {
   render() {
@@ -27,10 +31,11 @@ class Header extends Component {
           <Route exact path="/" component={Beregner} />
           <Route path="/Forklaring" component={Forklaring} />
           <Route path="/Om" component={Om} />
-        </div>
+        </div>        
       </div>
     );
   }
 }
+
 
 export default Header;
