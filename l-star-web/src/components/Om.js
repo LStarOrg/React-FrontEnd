@@ -17,7 +17,7 @@ class Om extends React.Component {
                           <img className="ui small centered image" src={EmilImg} size="150" alt=""/>
                       </div>
                     <div className="content">
-                        <a href="#" className="header">Emil Mosbæk Walsøe Pedersen</a>
+                        <a href="/" className="header">Emil Mosbæk Walsøe Pedersen</a>
                         <p>Datamatiker</p>
                         <p>Email: emilwalsoepedersen@gmail.com</p>
                     </div>
@@ -29,7 +29,7 @@ class Om extends React.Component {
                           <img className="ui small centered image" src={JonImg} alt=""/>
                       </div>
                     <div className="content">
-                        <a href="#" className="header">Jon Paw Lam</a>
+                        <a href="/" className="header">Jon Paw Lam</a>
                         <p>Datamatiker</p>
                         <p>Email: </p>
                     </div>
