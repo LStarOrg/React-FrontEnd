@@ -10,7 +10,7 @@ class Forklaring extends React.Component {
           <p>
             Dette værktøj beregner tilladt vækst af Listeria monocytogenes (i
             dette værktøj betegnet Listeria) i kolde måltider. Du kan derfor
-            fastsætte holdbarhed at kolde måltider som smørrebrød og sandwich
+            fastsætte holdbarhed af kolde måltider som smørrebrød og sandwich
             (salater) i forhold til Listeria – og kun Listeria. Hvis I anvender
             færdigpakkede fødevarer mærket med holdbarhed efter åbning, skal
             denne dato overholdes uanset hvad modellen beregner af holdbarhed.

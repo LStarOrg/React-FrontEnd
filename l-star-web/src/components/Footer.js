@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import LStarLogo from "../assets/favicon-96x96.png"
-
+import LStarLogo from "../assets/favicon-96x96.png";
+import ZeaLogo from "../assets/mceclip5.png"
+import DtuLogo from "../assets/dtu-1-logo-png-transparent.png"
 
 function ZEANav() {
   window.location.assign("https://www.zealand.dk/");
@@ -30,23 +31,34 @@ class Footer extends Component {
             <div class="three wide column">
               <h4 class="ui inverted header">Nyttige Links</h4>
               <div class="ui inverted link list">
-                <a href="#" class="item" onClick={ZEANav}>
+                <a href="https://www.zealand.dk/" class="item" onClick={ZEANav}>
                   Zealand
                 </a>
-                <a href="#" class="item" onClick={DTUNav}>
+                <a href="https://www.dtu.dk/" class="item" onClick={DTUNav}>
                   DTU
                 </a>
-                <a href="#" class="item" onClick={FSNav}>
+                <a
+                  href="https://www.foedevarestyrelsen.dk/"
+                  class="item"
+                  onClick={FSNav}
+                >
                   Fødevare Styrelsen
                 </a>
-                <a href="#" class="item" onClick={EANav}>
+                <a
+                  href="https://www.eaviden.dk/project/l-star/"
+                  class="item"
+                  onClick={EANav}
+                >
                   Om L-star på ea-viden
                 </a>
               </div>
             </div>
-            <div class="seven wide column">
+            <div class="ten wide column">
               <h4 class="ui inverted header">I samarbejde med:</h4>
-              <img src=""></img>
+              <div class="ui tiny images">
+                <img class="ui image" src={ZeaLogo} alt="Zealand"/>
+                <img class="ui image" src={DtuLogo} alt="DTU"/>
+              </div>
             </div>
           </div>
           <div class="ui inverted section divider"></div>
@@ -59,7 +71,7 @@ class Footer extends Component {
             </a>
             <a class="item" href="#">
               Kontakt os
-            </a>            
+            </a>
           </div>
         </div>
       </div>

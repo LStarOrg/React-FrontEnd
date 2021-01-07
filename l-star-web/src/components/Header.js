@@ -12,10 +12,9 @@ class Header extends Component {
       <div className="ui container">
         <div class="ui inverted borderless main menu fixed">
           <div className="header item">
-            <img className="ui avatar image" src={LStarLogo}></img>
+            <img className="ui avatar image" src={LStarLogo} alt=""></img>
             L-Star Web Project
           </div>
-
           <a class="item">
             <Link to="/">Startside</Link>
           </a>

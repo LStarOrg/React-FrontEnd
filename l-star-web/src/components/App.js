@@ -6,13 +6,12 @@ import Footer from "./Footer"
 
 class App extends Component {
   render() {
-    OpslagsAPI();
+    /*OpslagsAPI();*/
     return (
       <div className="App">
         <header className="App-header">
-          <Header/>
-
-          </header>
+          <Header />
+        </header>
         <footer className="App-footer">
           <Footer />
         </footer>
