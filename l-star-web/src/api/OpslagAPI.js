@@ -1,5 +1,6 @@
 import firebase from "../api/firebase";
 
+/*
 function OpslagsAPI() {
 
     //BrødDiverse 1
@@ -266,6 +267,11 @@ function OpslagsAPI() {
     const OstBløde337 = firebase.database().ref('Ost (bløde)/7');
     const OstBløde338 = firebase.database().ref('Ost (bløde)/8');
 
+
+    const BrødDiverse = firebase.database().ref('Brød (diverse)');
+
+    BrødDiverse.
+
     // Test
     Avocado3.on("value", (abc) => {
         console.log(abc.val());
@@ -285,8 +291,8 @@ function OpslagsAPI() {
     Avocado8.on("value", (abc) => {
         console.log(abc.val());
     });
-
+    
 }
-
+*/
 
 export default OpslagsAPI;
