@@ -1,6 +1,5 @@
 import firebase from "../api/firebase";
 
-/*
 function OpslagsAPI() {
 
     //BrødDiverse 1
@@ -293,6 +292,4 @@ function OpslagsAPI() {
     });
     
 }
-*/
-
 export default OpslagsAPI;
