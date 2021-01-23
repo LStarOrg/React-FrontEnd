@@ -10,21 +10,21 @@ class Header extends Component {
   render() {
     return (
       <div className="ui container">
-        <div class="ui inverted borderless main menu fixed">
+        <div className="ui inverted borderless main menu fixed">
           <div className="header item">
             <img className="ui avatar image" src={LStarLogo} alt=""></img>
             L-Star Web Project
           </div>
-          <a class="item">
+          <a className="item">
             <Link to="/">Startside</Link>
           </a>
-          <a class="item">
+          <a className="item">
             <Link to="/Forklaring">Forklaring</Link>
           </a>
-          <a class="item">
+          <a className="item">
             <Link to="/Om">Om L-Star</Link>
           </a>
-          <div class="right menu"></div>
+          <div className="right menu"></div>
         </div>
         <div className="ui raised segment" style={{ marginTop: 50 }}>
           <Route exact path="/" component={Beregner} />
