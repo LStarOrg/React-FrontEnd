@@ -4,7 +4,15 @@ const Resultat = (props) => {
   return (
     <div>
       <h3>Resultater</h3>
-      <div className="ui grid">
+      <div className="ui grid">      
+      <div className="two column row">
+        <div className="left floated column">
+          <label>Procentdel friske grøntsager i opskrift:</label>
+        </div>
+        <div className="right floated right aligned column">
+          <p>{props.resultatProcent} %</p>
+        </div>
+        </div>
       <div className="two column row">
         <div className="left floated column">
           <label>Maksimal holbarhedstid på modtagersted:</label>
@@ -20,7 +28,7 @@ const Resultat = (props) => {
         <div className="right floated right aligned column">
           <p>{props.resultatDato}</p>
         </div>
-      </div>
+      </div>      
       </div>
       
     </div>

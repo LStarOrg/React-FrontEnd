@@ -2,12 +2,14 @@ import React from "react";
 
 class TempList extends React.Component {
   constructor(props) {
-    super(props); //since we are extending class Table so we have to use super in order to override Component class constructor
+    super(props);
     this.state = {
-      //state is by default an object
       gaspakket: "",
       dato: "",
       tid: "",
+      timer: "",
+      tempProd: "",
+      tempMod: "",
 
       ingredienser: [
         { id: 1, type: "Brød", amount: "" },
@@ -83,13 +85,33 @@ class TempList extends React.Component {
     };
   }
 
-  mySubmit() {
+  onFormSubmit = (event) => {
+    event.preventDefault();
 
-    return 2
-  }
+    this.props.onSubmit(
+      this.state.gaspakket,
+      this.state.dato,
+      this.state.tid,
+      this.state.timer,
+      this.state.tempProd,
+      this.state.tempMod,
+      this.state.ingredienser
+    );
+  };
+
+  onChangeAmount = (id, e) => {
+    this.setState({
+      ingredienser: this.state.ingredienser.map((ingrediens) => {
+        if (id === ingrediens.id) {
+          return { ...ingrediens, amount: e.target.value };
+        }
+        return ingrediens;
+      }),
+    });
+  };
 
   renderTableData() {
-    return this.state.ingredienser.map((ingrediens, index) => {
+    return this.state.ingredienser.map((ingrediens) => {
       const { id, type } = ingrediens; //destructuring
       return (
         <tr key={id}>
@@ -102,13 +124,15 @@ class TempList extends React.Component {
                 type="text"
                 placeholder="Mængde"
                 value={this.state.ingredienser.amount}
-                onChange={(e) => this.setState({ amount: e.target.value })}
+                onChange={(e) => {
+                  this.onChangeAmount(ingrediens.id, e);
+                }}
               />
               <select className="ui fluid selection dropdown">
                 <option selected="" value="kg">
-                  Kilogram
+                  KG
                 </option>
-                <option value="g">Gram</option>
+                <option value="g">G</option>
               </select>
             </div>
           </td>
@@ -123,62 +147,87 @@ class TempList extends React.Component {
     //Whenever our class runs, render method will be called automatically, it may have already defined in the constructor behind the scene.
     return (
       <div>
-        <table id="itemsTable" className="ui very padded fixed table">
-          <thead>
-            <tr>
-              <th>Fødevare</th>
-              <th>Mængde</th>
-            </tr>
-          </thead>
-          <tbody id="">{this.renderTableData()}</tbody>
-        </table>
-        <div class="ui vertical segment">
-          <p>Er produktet gaspakket?</p>
-          <select class="ui dropdown">
-            <option value="nej">Nej</option>
-            <option value="ja">Ja</option>
-          </select>
-        </div>
-        <div class="ui vertical segment">
-          <p>Produktions dato og klokkeslæt</p>
-          <div class="ui input">
-            <input type="text" placeholder="Dato: dd-mm-yy" />
+        <form onSubmit={this.onFormSubmit}>
+          <table id="itemsTable" className="ui very padded fixed table">
+            <thead>
+              <tr>
+                <th>Fødevare</th>
+                <th>Mængde</th>
+              </tr>
+            </thead>
+            <tbody id="">{this.renderTableData()}</tbody>
+          </table>
+          <div className="ui vertical segment">
+            <p>Er produktet gaspakket?</p>
+            <select
+              className="ui dropdown"
+              onChange={(e) => this.setState({ gaspakket: e.target.value })}
+            >
+              <option value="nej">Nej</option>
+              <option value="ja">Ja</option>
+            </select>
           </div>
-          <div class="ui input">
-            <input type="text" placeholder="Tid: 12:03" />
+          <div className="ui vertical segment">
+            <p>Produktions dato og klokkeslæt</p>
+            <div className="ui input">
+              <input
+                type="text"
+                placeholder="Dato: dd-mm-yy"
+                onChange={(e) => this.setState({ dato: e.target.value })}
+              />
+            </div>
+            <div className="ui input">
+              <input
+                type="text"
+                placeholder="Tid: 12:03"
+                onChange={(e) => this.setState({ tid: e.target.value })}
+              />
+            </div>
           </div>
-        </div>
-        <div class="ui vertical segment">
-          <p>Opbevaringstid på produktionssted</p>
-          <div class="ui right labeled input">
-            <input type="text" placeholder="Eks: 4" />
-            <div class="ui basic label">Timer</div>
+          <div className="ui vertical segment">
+            <p>Opbevaringstid på produktionssted</p>
+            <div className="ui right labeled input">
+              <input
+                type="text"
+                placeholder="Eks: 4"
+                onChange={(e) => this.setState({ timer: e.target.value })}
+              />
+              <div className="ui basic label">Timer</div>
+            </div>
           </div>
-        </div>
-        <div class="ui vertical segment">
-          <p>Opbevaringstemparatur på produktionssted</p>
-          <select class="ui dropdown">
-            <option value="3">3 °C</option>
-            <option value="4">4 °C</option>
-            <option value="5">5 °C</option>
-            <option value="6">6 °C</option>
-            <option value="7">7 °C</option>
-            <option value="8">8 °C</option>
-          </select>
-        </div>
-        <div class="ui vertical segment">
-          <p>Opbevaringstemparatur på modtagersted</p>
-          <select class="ui dropdown">
-            <option value="3">3 °C</option>
-            <option value="4">4 °C</option>
-            <option value="5">5 °C</option>
-            <option value="6">6 °C</option>
-            <option value="7">7 °C</option>
-            <option value="8">8 °C</option>
-          </select>
-        </div>
-        <br/>
-        <button class="ui button" onClick={this.mySubmit}>Beregn</button>
+          <div class="ui vertical segment">
+            <p>Opbevaringstemparatur på produktionssted</p>
+            <select
+              class="ui dropdown"
+              onChange={(e) => this.setState({ tempProd: e.target.value })}
+            >
+              <option value="3">3 °C</option>
+              <option value="4">4 °C</option>
+              <option value="5">5 °C</option>
+              <option value="6">6 °C</option>
+              <option value="7">7 °C</option>
+              <option value="8">8 °C</option>
+            </select>
+          </div>
+          <div class="ui vertical segment">
+            <p>Opbevaringstemparatur på modtagersted</p>
+            <select
+              class="ui dropdown"
+              onChange={(e) => this.setState({ tempMod: e.target.value })}
+            >
+              <option value="3">3 °C</option>
+              <option value="4">4 °C</option>
+              <option value="5">5 °C</option>
+              <option value="6">6 °C</option>
+              <option value="7">7 °C</option>
+              <option value="8">8 °C</option>
+            </select>
+          </div>
+          <br />
+          <button class="ui button" onClick={this.onFormSubmit}>
+            Beregn
+          </button>
+        </form>
       </div>
     );
   }
